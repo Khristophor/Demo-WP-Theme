@@ -1,0 +1,12 @@
+{
+  "[php]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": false
+  },
+  "php.suggest.basic": false,
+  "phpcs.enable": true,
+  "phpcs.standard": "/Users/cwiseman/Sites/wordcamp/app/public/wp-content/themes/demo/phpcs.xml",
+  "phpcbf.enable": true,
+  "phpcbf.standard": "/Users/cwiseman/Sites/wordcamp/app/public/wp-content/themes/demo/phpcs.xml",
+  "phpcbf.onsave": true
+}
