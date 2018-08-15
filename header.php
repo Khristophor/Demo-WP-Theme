@@ -25,4 +25,3 @@
 			);
 			?>
 		</nav>
-		<div class="uk-container">

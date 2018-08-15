@@ -6,17 +6,17 @@ while ( have_posts() ) :
 	the_post();
 
 	?>
-
-	<article class="uk-article uk-padding">
+	<div class="uk-container">
+		<article class="uk-article uk-padding">
+				<?php
+				the_title( '<h1 class="uk-article-title">', '</h1>' );
+				?>
+			<p class="uk-article-meta">Written by <?php the_author(); ?> on <?php the_date(); ?></p>
 			<?php
-			the_title( '<h1 class="uk-article-title">', '</h1>' );
+					the_content();
 			?>
-		<p class="uk-article-meta">Written by <?php the_author(); ?> on <?php the_date(); ?></p>
-		<?php
-				the_content();
-		?>
-	</article>
-
+		</article>
+	</div>
 	<?php
 
 endwhile;

@@ -11,25 +11,40 @@
 get_header();
 
 if ( have_posts() ) :
-	while ( have_posts() ) :
-		the_post();
-		?>
-	<article class="uk-article uk-padding">
+	?>
+	<div class="container">
+		<div uk-grid>
+			<div class="uk-width-expand@m">
 			<?php
-			the_title( '<h2 class="uk-article-title">', '</h2>' );
+			while ( have_posts() ) :
+				the_post();
+				?>
+				<article class="uk-article uk-padding">
+						<?php
+						the_title( '<h2 class="uk-article-title">', '</h2>' );
+						?>
+					<p class="uk-article-meta">Written by <?php the_author(); ?><?php the_date( 'F j, Y', ' on ' ); ?>. Posted in <?php the_category( ', ' ); ?></p>
+					<?php
+							the_content();
+					?>
+					<div class="uk-grid-small uk-child-width-auto" uk-grid>
+						<div>
+							<a class="uk-button uk-button-text" href="<?php the_permalink(); ?>">Read more</a>
+						</div>
+					</div>
+				</article>
+				<?php
+			endwhile;
 			?>
-		<p class="uk-article-meta">Written by <?php the_author(); ?><?php the_date( 'F j, Y', ' on ' ); ?>. Posted in <?php the_category( ', ' ); ?></p>
-		<?php
-				the_content();
-		?>
-		<div class="uk-grid-small uk-child-width-auto" uk-grid>
-			<div>
-				<a class="uk-button uk-button-text" href="<?php the_permalink(); ?>">Read more</a>
+			</div>
+			<div class="uk-width-1-3@m uk-background-muted">
+			<?php
+			get_sidebar();
+			?>
 			</div>
 		</div>
-	</article>
-		<?php
-	endwhile;
+	</div>
+	<?php
 endif;
 
 get_footer();
